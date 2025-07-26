@@ -1,0 +1,16 @@
+{
+  "modeA": [
+    {"keyword": "news", "title": "Breaking News!"},
+    {"keyword": "event", "title": "Local Event Alert"},
+    {"keyword": "update", "title": "System Update Available"},
+    {"keyword": "sale", "title": "Big Sale This Weekend!"},
+    {"keyword": "reminder", "title": "Don't Forget Today's Meeting"}
+  ],
+  "modeB": [
+    {"keyword": "fun", "title": "Have Fun!"},
+    {"keyword": "relax", "title": "Relax Time"},
+    {"keyword": "chill", "title": "Chill Out"},
+    {"keyword": "happy", "title": "Stay Happy"},
+    {"keyword": "enjoy", "title": "Enjoy the Moment"}
+  ]
+}
