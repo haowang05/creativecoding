@@ -1,7 +1,7 @@
 # Generating Fake News via Real-Time Emotion Recognition
 
 Student Name (Id#): Hao Wang #24010286#
-|<img width="1280" alt="image" src="https://git.arts.ac.uk/24010286/codingt3/assets/1333/03662043-d2bb-4e5c-b5ec-a2cde35f4652">|<img width="1280" alt="image" src="https://git.arts.ac.uk/24010286/codingt3/assets/1333/b8585660-efce-48f2-a012-e1104f735e28">
+|<img width="2560" height="1496" alt="image" src="https://github.com/user-attachments/assets/b26caf8c-8b2f-43ee-85d2-f798158db6d4" />|<img width="2560" height="1496" alt="image" src="https://github.com/user-attachments/assets/e96269d4-84af-4ee2-a97e-3012b0bcbd54" />|
 |---|---|
 
 
@@ -63,7 +63,8 @@ After these adjustments, the system was successfully tested and performed as exp
 
 Initially, I attempted to generate fake news titles by directly feeding prompts into local language models. However, the generated outputs often had little to no relation to the given prompts.
 
-   <img width="500" alt="image" src="https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/20c1e511-47d6-4947-b3c1-d25965d62ff3">
+<img width="763" height="254" alt="image" src="https://github.com/user-attachments/assets/3fe471cd-855f-4e75-a00e-cc6b8602ef24" />
+
 
 
 
@@ -75,7 +76,7 @@ I tested several versions of GPT-2:
 
 #### Large Language Models via API
 Given these issues, I decided to switch to using large language models via API, since running them locally was not feasible due to their size.
-|![image](https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/16bcdd65-1e03-42e1-b553-86bd7816714b)|![image](https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/8717f4c3-d97f-4948-9af5-0423d4a67136)|
+|<img width="661" height="417" alt="image" src="https://github.com/user-attachments/assets/e44233da-48a3-427e-b372-e0a6d4e4f99d" />|<img width="808" height="507" alt="image" src="https://github.com/user-attachments/assets/f4e2cda3-f5c9-41e9-81a4-3c1721a83c3d" />|
 |---|---|
 
 However, this approach introduced new problems:
@@ -98,7 +99,7 @@ I combined the emotion recognition and the initial fake news title generation in
 The main goal was to ensure that both modules use the same set of emotion labels and that they can work together seamlessly.
 
 Another key objective was to test performance, since both real-time emotion classification and text generation require responsive speeds.
-|![image](https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/e0f5e38f-3b36-484f-8cb2-955da6fb9a0e)|![image](https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/cfbd5b9b-3415-4bf9-879d-4e5dcdaf7e85)|
+|<img width="1216" height="682" alt="image" src="https://github.com/user-attachments/assets/c9f3ac7a-49c0-4f53-9462-2e019b4774be" />|<img width="1215" height="683" alt="image" src="https://github.com/user-attachments/assets/8d2a3f5b-78ca-4d2e-963f-15ad271d3ce6" />|
 |---|---|
 
 Areas for Improvement:
@@ -125,20 +126,23 @@ I downloaded the dataset from Kaggle and used Python to process the data, saving
 1. Kept only the news titles.
 
 2. Used an AI model to classify the emotions of all 40,000 news titles, and saved the results as a CSV file.
-   ![image](https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/4dfdedf4-6bb1-47b3-a3fb-7108b01a7137)
-   <img width="677" alt="image" src="https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/db3e4039-f8c7-4b11-8b98-cbf8dc09dc9b">
+  <img width="845" height="363" alt="image" src="https://github.com/user-attachments/assets/ce65f462-ebbc-411e-8e11-a9e7ce8893af" />
+
+  <img width="1354" height="854" alt="image" src="https://github.com/user-attachments/assets/e895d927-94ba-44d4-8ae8-ba7a761ec480" />
+
 
 
 
 4. Mapped the model's 28 emotion labels to 7 facial expression categories.
   
-   ![image](https://git.arts.ac.uk/24010286/codingt3/assets/1333/c62b7e8d-abc5-4496-853f-14889b79f7fc)
+   <img width="287" height="588" alt="image" src="https://github.com/user-attachments/assets/31fa1cf3-a440-4ea2-8d6c-ea1c4c70f976" />
 
 
 5. Saved the data with news titles and their corresponding emotion labels into a new CSV file.
 
 6. Converted the CSV file into TXT format for easier training with GPT-2.
-   ![image](https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/9ae86f85-62eb-4fe6-bcfd-e7a1b73528ce)
+   <img width="721" height="370" alt="image" src="https://github.com/user-attachments/assets/742855a9-c300-4f1a-905a-5ea3ddb7dc8d" />
+
 
 
 #### Model Testing
@@ -147,11 +151,13 @@ I downloaded the dataset from Kaggle and used Python to process the data, saving
 
 2. I tested three different GPT-2 models and saved the results under separate output paths:
    
-      ![image](https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/d1ad5fcd-1906-4f3b-9ce0-c501cde3d6a6)
+      <img width="273" height="178" alt="image" src="https://github.com/user-attachments/assets/a276914a-0808-494c-b57f-32700d6316dc" />
+
 
 |sshleifer/tiny-gpt2|gpt2|gpt2-medium|
 |---|---|---|
-|![image](https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/f10f14fa-7b43-4931-931f-6c728e21bbaf)|![image](https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/c9b04f6c-c5b0-43a5-8f4e-cd969c00cfa1)|       ![image](https://git.arts.ac.uk/24010286/Exploring-Machine-Intelligence/assets/1333/a70b817c-5cd9-4f81-9be6-c9ad337738ae)|
+|<img width="695" height="564" alt="image" src="https://github.com/user-attachments/assets/5692ff36-dced-43ae-87af-e9960bfef7f2" />|<img width="555" height="552" alt="image" src="https://github.com/user-attachments/assets/e5a74c3e-b4fa-47e9-8f47-ab323d852484" />|<img width="722" height="572" alt="image" src="https://github.com/user-attachments/assets/082451dc-d1dd-4ae1-baaf-48a5f9b9a50d" />
+|
 |The generated content was often incoherent and sometimes consisted of non-English words, though it was extremely fast to generate.|The output resembled fake news quite well and remained mostly readable in English. However, the generation speed was slightly slower.|This model pushed my computer to its limits. The generated text was highly readable and felt more realistic, but the generation speed was noticeably slower.|
 
        
@@ -166,7 +172,8 @@ I downloaded the dataset from Kaggle and used Python to process the data, saving
 
 ### 5. Final Testing
 
-<img width="799" alt="image" src="https://git.arts.ac.uk/24010286/codingt3/assets/1333/58d4cca5-c125-4351-8493-7edcc63e790b">
+<img width="1598" height="898" alt="image" src="https://github.com/user-attachments/assets/39a26ad2-9c16-41cb-8a39-8e005263999b" />
+
 
 Building upon the Overall Initial Testing, I integrated my own trained model and made slight optimizations to the application window. I also focused on performance tuning during both the emotion recognition and text generation steps.
 
