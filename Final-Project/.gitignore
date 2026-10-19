@@ -2,3 +2,8 @@
 identity-fragmentor/.DS_Store
 identity-fragmentor/js/config.js
 !identity-fragmentor/js/config.example.js
+
+# Local credentials
+.env
+.env.*
+!.env.example

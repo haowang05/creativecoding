@@ -1,6 +1,6 @@
 // fakeNews.js
 
-const API_KEY = "sk-ohvhrbbvbncktqemgpkkcsoifejawscqatrrxvphutoywoll";
+const API_KEY = "YOUR_API_KEY";
 
 const emotionToPrompt = {
   sad: "Write a happy fake news headline. Keep it under 15 words. Only return the headline, no explanation, no word count.",

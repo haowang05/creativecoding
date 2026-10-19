@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Fragmentor (Local Version)</title> 
+    <script src="https://cdn.tailwindcss.com"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-black text-white relative w-screen h-screen">
+
+    <div id="rain-container" class="absolute inset-0 pointer-events-none opacity-20 z-0 overflow-hidden"></div>
+    <div class="scanlines"></div>
+
+    <div class="absolute inset-0 z-10 flex items-center justify-center">
+        <!-- webcam -->
+        <video id="inputVideo" class="w-full h-full object-cover opacity-60 mix-blend-screen" autoplay muted playsinline></video>
+        <!-- 2D FACE -->
+        <canvas id="overlayCanvas" class="absolute top-0 left-0 w-full h-full pointer-events-none z-20"></canvas>
+    </div>
+
+    <div class="absolute inset-0 z-30 pointer-events-none flex flex-col justify-between p-6">
+        
+        <div class="flex justify-between items-start">
+            <div class="border-l-4 border-cyan-500 pl-3">
+                <h1 class="text-2xl font-bold text-cyan-400 tracking-tighter drop-shadow-[0_0_10px_rgba(0,243,255,0.8)]">
+                    IDENTITY_FRAGMENTOR <span class="text-xs align-top opacity-50">v.LOCAL</span>
+                </h1>
+                <div class="flex items-center gap-2 text-xs text-cyan-700 mt-1">
+                    <span id="statusIndicator">LOADING_MODELS...</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="centerStage" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto text-center">
+            
+            <!-- start button -->
+            <button id="scanBtn" class="hidden relative px-10 py-4 bg-black/60 border border-cyan-500/50 backdrop-blur hover:bg-cyan-900/30 hover:border-cyan-400 transition-all duration-200 group overflow-hidden clip-path-polygon cursor-pointer">
+                <div class="absolute inset-0 bg-cyan-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                <span class="font-bold tracking-[0.2em] text-white flex items-center gap-2">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    INITIALIZE_SCAN
+                </span>
+            </button>
+
+            <!-- counter -->
+            <div id="loadingText" class="text-cyan-500 font-bold text-xl animate-pulse">Initializing...</div>
+        </div>
+
+        <!-- results -->
+        <div id="resultsLayer" class="absolute inset-0 pointer-events-auto hidden">
+            <!-- restart button -->
+            <button id="resetBtn" class="absolute top-24 right-1/2 translate-x-1/2 p-2 bg-black border border-red-500/50 text-red-500 hover:bg-red-900/50 hover:text-white transition-colors z-50 rounded cursor-pointer">
+                RESCAN
+            </button>
+        </div>
+
+        <!-- footer -->
+        <div class="flex justify-between items-end text-[10px] text-gray-600">
+            <div class="flex gap-4">
+                <span>CAM_ISO: AUTO</span>
+                <span id="trackingStatus">TRACKING: SEARCHING</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

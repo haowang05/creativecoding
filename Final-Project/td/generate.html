@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TD CV Analyzer</title>
+    <style>
+        body { font-family: sans-serif; background-color: #222; color: #eee; }
+        img { border: 2px solid #555; width: 640px; height: 480px; }
+        button { font-size: 16px; padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+    
+    <h2>TouchDesigner 摄像头画面</h2>
+    <img src="http://localhost:9980/video" alt="TD Video Stream">
+
+    <h2>模拟 CV 结果</h2>
+    <p>（在真实项目中，这些数据将由 MediaPipe 自动发送）</p>
+    <button onclick="sendDataToTD('female', 30)">发送: 女性, 30岁</button>
+    <button onclick="sendDataToTD('male', 50)">发送: 男性, 50岁</button>
+    <button onclick="sendDataToTD('non-binary', 25)">发送: 中性, 25岁</button>
+
+    <script>
+        // 这是将数据从 JS 发送回 TD 的核心函数
+        function sendDataToTD(gender, age) {
+            
+            // 1. 准备数据
+            const data = {
+                gender: gender,
+                age: age
+            };
+            
+            // 2. 将数据转换为 JSON 字符串
+            const jsonString = JSON.stringify(data);
+            console.log("正在发送: " + jsonString);
+
+            // 3. 检查 'window.td' 对象是否存在
+            // (这个对象只在 Web Render TOP 内部运行时才存在)
+            if (window.td) {
+                // 4. 使用 dispatch() 方法将 JSON 字符串发送回 TD
+                window.td.dispatch(jsonString);
+            } else {
+                console.error("不在 TouchDesigner 环境中运行。");
+            }
+        }
+    </script>
+
+</body>
+</html>

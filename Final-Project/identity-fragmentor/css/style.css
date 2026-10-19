@@ -1,0 +1,58 @@
+body {
+    background-color: #050505;
+    color: #e0e0e0;
+    font-family: 'Share Tech Mono', monospace;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.scanlines {
+    position: fixed;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0) 50%,
+        rgba(0,0,0,0.2) 50%,
+        rgba(0,0,0,0.2)
+    );
+    background-size: 100% 4px;
+    z-index: 50;
+    pointer-events: none;
+}
+
+video {
+    transform: scaleX(-1);
+    filter: contrast(1.1) brightness(1.2) grayscale(0.2);
+}
+
+.glow-text {
+    text-shadow: 0 0 5px currentColor;
+}
+
+@keyframes rain {
+    0% { top: -10%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 110%; opacity: 0; }
+}
+.rain-drop {
+    position: absolute;
+    color: #06b6d4; /* cyan-500 */
+    font-size: 12px;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    animation-name: rain;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    text-shadow: 0 0 5px currentColor;
+    opacity: 0;
+}
+
+.clip-path-polygon {
+    clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.fade-in { animation: fadeIn 0.5s ease-out forwards; }
